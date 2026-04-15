@@ -762,17 +762,62 @@ footer p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.8; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+
+  /* Espaçamentos globais */
+  .paraquem, .autoridade, .mockup-section, .livro-section,
+  .antesdepois, .modulos, .quem, .depos, .balist,
+  .oferta, .faq, .final-cta { padding: 52px 0; }
+
+  /* Botões */
+  .cta-btn { padding: 17px 28px; font-size: 0.92rem; letter-spacing: 1.5px; }
+
+  /* Hero */
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-text { padding: 48px 0 32px; text-align: center; }
+  .hero-photo { order: -1; min-height: 300px; }
+  .hero-photo img { height: 300px; width: 100%; max-width: 100%; object-position: top center; }
+  .hero-text { padding: 36px 0 48px; text-align: center; }
   .hero-sub { margin-left: auto; margin-right: auto; }
-  .hero-stats { justify-content: center; }
-  .hero-photo { min-height: 320px; }
-  .hero-photo img { height: 380px; max-width: 100%; }
-  .autoridade-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero-tag { font-size: 0.62rem; }
+
+  /* Para quem */
   .paraquem-grid { grid-template-columns: 1fr; }
-  .balist-grid { grid-template-columns: 1fr; }
-  .ba-arrow { transform: rotate(90deg); padding-top: 0; }
+
+  /* Autoridade */
+  .autoridade-inner { grid-template-columns: 1fr; gap: 28px; }
+  .autoridade-img { max-width: 260px; margin: 0 auto; }
+
+  /* Livro */
+  .livro-inner { grid-template-columns: 1fr; gap: 28px; }
+  .livro-img { max-width: 180px; margin: 0 auto; }
+
+  /* Antes/depois foto */
+  .ad-caption div { font-size: 0.7rem; padding: 10px; }
+
+  /* Módulos */
+  .modulo-item { grid-template-columns: 44px 1fr; gap: 14px; }
+  .modulo-num { font-size: 1.5rem; }
+
+  /* Quem sou eu */
+  .quem-bio-grid { grid-template-columns: 1fr; gap: 24px; }
+  .quem-bio-img { max-width: 200px; margin: 0 auto; }
+  .quem-credenciais { justify-content: center; }
+
+  /* Antes/depois lista */
+  .balist-grid { grid-template-columns: 1fr; gap: 16px; }
+  .ba-arrow { transform: rotate(90deg); padding: 0; justify-content: center; }
+
+  /* Oferta */
   .oferta-grid { grid-template-columns: 1fr; }
+  .preco-valor { font-size: 2.4rem; }
+
+  /* FAQ */
+  .faq-q { font-size: 0.9rem; padding: 18px 0; }
+
+  /* Final CTA */
+  .final-photo img { height: 200px; width: 100%; object-fit: cover; }
+
+  /* Seção título */
+  .section-title { font-size: clamp(1.5rem, 5vw, 2rem); }
 }
 </style>
 </head>
