@@ -357,6 +357,83 @@ body { font-family: 'Inter', sans-serif; background: var(--black-deep); color: v
 .modulo-content h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 6px; }
 .modulo-content p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
 
+/* ===== LIVRO ===== */
+.livro-section {
+  background: var(--black);
+  padding: 80px 0;
+  border-top: 1px solid rgba(201,162,74,0.15);
+  border-bottom: 1px solid rgba(201,162,74,0.15);
+}
+.livro-inner {
+  display: grid;
+  grid-template-columns: 0.55fr 1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.livro-img img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.6);
+}
+.livro-placeholder {
+  width: 100%;
+  aspect-ratio: 2/3;
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 20px;
+}
+.livro-mock-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1.3;
+}
+.livro-mock-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.livro-tag {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.68rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+.livro-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+.livro-text p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+@media (max-width: 768px) {
+  .livro-inner { grid-template-columns: 1fr; gap: 32px; }
+  .livro-img { max-width: 220px; margin: 0 auto; }
+}
+
 /* ===== ANTES DEPOIS ===== */
 .antesdepois {
   background: var(--blue-dark);
@@ -802,6 +879,35 @@ footer p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.8; }
   </div>
 </section>
 
+<!-- 6.5 LIVRO -->
+<section class="livro-section">
+  <div class="container">
+    <div class="livro-inner">
+      <div class="livro-img">
+        <img src="IMG_LIVRO.jpg" alt="O Poder Está em Você - Charles Veiyga"
+             onerror="this.onerror=null;this.style.display='none';document.getElementById('livro-fb').style.display='flex';">
+        <div id="livro-fb" class="livro-placeholder">
+          <span class="livro-mock-title">O Poder<br>Está em Você</span>
+          <span class="livro-mock-sub">Charles Veiyga</span>
+        </div>
+      </div>
+      <div class="livro-text">
+        <span class="livro-tag">Livro</span>
+        <h2>Além do curso, <span class="text-gold">existe um livro.</span></h2>
+        <p>
+          Em <em>"O Poder Está em Você"</em>, Charles Veiyga vai direto ao ponto: o poder de transformar sua vida já existe dentro de você. O que falta é saber como ativá-lo.
+        </p>
+        <p>
+          Com linguagem direta e vivências reais de quem passou por palcos internacionais, salões de alto padrão e consultórios de imagem, o livro complementa o método com uma visão profunda sobre autoconhecimento, postura mental e construção de identidade.
+        </p>
+        <p>
+          Quem entra no Mapa do Posicionamento de Valor carrega não só o método prático, mas a filosofia que sustenta cada pilar ensinado.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 7. ANTES E DEPOIS FOTO -->
 <section class="antesdepois">
   <div class="container">
@@ -1038,26 +1144,47 @@ footer p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.8; }
   <div class="container">
     <div class="gold-divider"></div>
     <h2 class="section-title" style="margin-bottom:36px;">Perguntas <span class="text-gold">Frequentes</span></h2>
+
     <div class="faq-item">
-      <button class="faq-q">Para quem é esse curso?</button>
-      <div class="faq-a"><p>Para qualquer profissional, empreendedor, criador de conteúdo ou pessoa que quer ser percebida como a autoridade que realmente é. Se você sente que é bom no que faz, mas as pessoas não enxergam isso de primeira, esse curso é para você.</p></div>
+      <button class="faq-q">Nunca me importei muito com roupa ou aparência. Esse curso é mesmo pra mim?</button>
+      <div class="faq-a"><p>É exatamente pra você. A maioria das pessoas que mais se transforma com esse método nunca tinha pensado nisso antes. O curso não ensina moda, ensina estratégia de imagem. Você vai entender por que certas escolhas funcionam e por que outras trabalham contra você, sem precisar virar especialista em estilo.</p></div>
     </div>
+
     <div class="faq-item">
       <button class="faq-q">Funciona para homens e mulheres?</button>
-      <div class="faq-a"><p>Sim. O curso possui módulos específicos para homens (cabelo e barba) e mulheres (cabelo e maquiagem), além de pilares universais como vestimenta, postura, comunicação e gesticulação.</p></div>
+      <div class="faq-a"><p>Sim. O curso tem aulas específicas para homens (cabelo e barba) e para mulheres (cabelo e maquiagem), além de pilares que se aplicam a todos: vestimenta, postura, comunicação e gesticulação.</p></div>
     </div>
+
     <div class="faq-item">
-      <button class="faq-q">Por quanto tempo terei acesso?</button>
-      <div class="faq-a"><p>O acesso é vitalício. Você pode assistir às aulas quantas vezes quiser, no seu ritmo, de qualquer dispositivo.</p></div>
+      <button class="faq-q">Quanto tempo até eu ver algum resultado na prática?</button>
+      <div class="faq-a"><p>Depende do quanto você aplica. Alguns alunos relatam mudanças na forma como são tratados já na primeira semana, só com os ajustes de postura e vestimenta. Outros levam mais tempo porque precisam de adaptações mais profundas. O que posso dizer com segurança é que quem aplica, vê resultado.</p></div>
     </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Já tentei mudar minha imagem antes e não deu certo. Por que seria diferente aqui?</button>
+      <div class="faq-a"><p>Porque a maioria das tentativas foca no que vestir, não no porquê. Esse método trabalha primeiro a consciência: quem você quer ser percebido, em qual contexto, para qual público. Sem isso, qualquer mudança estética é cosmética. Aqui você constrói a base antes de tocar na superfície.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">As aulas são ao vivo ou posso assistir quando eu quiser?</button>
+      <div class="faq-a"><p>Todas as aulas são gravadas e ficam disponíveis na plataforma com acesso vitalício. Você assiste no seu ritmo, quantas vezes quiser, de qualquer dispositivo.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Não tenho dinheiro pra comprar roupas novas agora. Consigo aplicar mesmo assim?</button>
+      <div class="faq-a"><p>Sim. Grande parte do método não depende de peças novas. Postura, comunicação, gesticulação, corte de cabelo e o reposicionamento das roupas que você já tem custam pouco ou nada. O curso te ensina a extrair o máximo do que você já possui antes de gastar qualquer centavo a mais.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Para quem é esse curso?</button>
+      <div class="faq-a"><p>Para profissionais, empreendedores, criadores de conteúdo e qualquer pessoa que sente que é boa no que faz, mas não consegue transmitir isso na primeira impressão. Se você já perdeu oportunidades sem entender por quê, esse curso foi feito para você.</p></div>
+    </div>
+
     <div class="faq-item">
       <button class="faq-q">E se eu não gostar?</button>
       <div class="faq-a"><p>Você tem 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeito, devolvemos 100% do valor investido. Sem perguntas, sem burocracia.</p></div>
     </div>
-    <div class="faq-item">
-      <button class="faq-q">Preciso de conhecimento prévio em moda?</button>
-      <div class="faq-a"><p>Não. O curso foi pensado para pessoas comuns que querem se posicionar melhor. Charles ensina de forma prática e acessível, independente do seu nível de conhecimento atual sobre imagem pessoal.</p></div>
-    </div>
+
   </div>
 </section>
 
