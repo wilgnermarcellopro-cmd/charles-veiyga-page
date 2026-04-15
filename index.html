@@ -297,38 +297,89 @@ body { font-family: 'Inter', sans-serif; background: var(--black-deep); color: v
   margin-right: auto;
   line-height: 1.8;
 }
-.mockup-box {
-  max-width: 680px;
+.curso-card {
+  max-width: 660px;
   margin: 0 auto;
   border: 2px solid var(--gold);
   border-radius: 8px;
   overflow: hidden;
+  background: linear-gradient(160deg, var(--blue-dark) 0%, #0A0A0A 100%);
 }
-.mockup-box img {
-  width: 100%;
-  display: block;
+.curso-card-header {
+  padding: 36px 36px 28px;
+  border-bottom: 1px solid rgba(201,162,74,0.2);
 }
-.mockup-placeholder {
-  width: 100%;
-  height: 380px;
-  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 12px;
-}
-.mockup-placeholder .mock-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+.curso-card-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black-deep);
+  font-size: 0.62rem;
   font-weight: 800;
-  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-bottom: 14px;
 }
-.mockup-placeholder .mock-sub {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+.curso-card-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 800;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+.curso-card-autor {
+  font-size: 0.82rem;
+  color: var(--gold);
   letter-spacing: 2px;
   text-transform: uppercase;
+  font-weight: 600;
+}
+.curso-card-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(201,162,74,0.12);
+  border-bottom: 1px solid rgba(201,162,74,0.2);
+}
+.curso-card-pillars span {
+  background: #0D0D0D;
+  padding: 14px 16px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+.curso-card-pillars span:nth-child(odd) { background: #0f0f0f; }
+.curso-card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 24px 36px;
+}
+.curso-card-info { text-align: center; flex: 1; }
+.curso-info-num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.curso-info-lbl {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.curso-card-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(201,162,74,0.2);
+  flex-shrink: 0;
 }
 
 /* ===== MÓDULOS ===== */
@@ -378,32 +429,62 @@ body { font-family: 'Inter', sans-serif; background: var(--black-deep); color: v
   border-radius: 4px;
   box-shadow: 0 12px 48px rgba(0,0,0,0.6);
 }
-.livro-placeholder {
+.livro-cover-css {
   width: 100%;
   aspect-ratio: 2/3;
-  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  background: linear-gradient(160deg, #101D2F 0%, #0A0A0A 100%);
   border: 2px solid var(--gold);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 14px;
   text-align: center;
-  padding: 20px;
+  padding: 32px 24px;
+  position: relative;
+  box-shadow: 8px 8px 40px rgba(0,0,0,0.7);
 }
-.livro-mock-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 800;
+.livro-cover-css::before {
+  content: '';
+  position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  border: 1px solid rgba(201,162,74,0.25);
+  border-radius: 2px;
+  pointer-events: none;
+}
+.livro-ornament {
+  font-size: 1.2rem;
   color: var(--gold);
-  line-height: 1.3;
+  opacity: 0.7;
 }
-.livro-mock-sub {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  letter-spacing: 2px;
+.livro-cover-autor {
+  font-size: 0.7rem;
+  color: var(--gold-light);
+  letter-spacing: 3px;
   text-transform: uppercase;
+  font-weight: 600;
+}
+.livro-cover-line {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+.livro-cover-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 900;
+  color: var(--text-light);
+  line-height: 1.25;
+}
+.livro-cover-sub {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1.6;
+  padding: 0 8px;
 }
 .livro-tag {
   display: inline-block;
@@ -786,9 +867,14 @@ footer p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.8; }
   .autoridade-inner { grid-template-columns: 1fr; gap: 28px; }
   .autoridade-img { max-width: 260px; margin: 0 auto; }
 
+  /* Mockup curso */
+  .curso-card-pillars { grid-template-columns: repeat(2, 1fr); }
+  .curso-card-header { padding: 24px 20px 20px; }
+  .curso-card-footer { padding: 20px; }
+
   /* Livro */
   .livro-inner { grid-template-columns: 1fr; gap: 28px; }
-  .livro-img { max-width: 180px; margin: 0 auto; }
+  .livro-img { max-width: 200px; margin: 0 auto; }
 
   /* Antes/depois foto */
   .ad-caption div { font-size: 0.7rem; padding: 10px; }
@@ -913,12 +999,29 @@ footer p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.8; }
     <div class="gold-divider"></div>
     <h2>Apresentando o <span class="text-gold">Mapa do Posicionamento de Valor</span></h2>
     <p class="sub">O curso online que transforma cada detalhe da sua imagem em um ativo de autoridade, em 9 aulas práticas e diretas ao ponto.</p>
-    <div class="mockup-box">
-      <img src="IMG_MOCKUP.jpg" alt="Mapa do Posicionamento de Valor"
-           onerror="this.onerror=null;this.style.display='none';document.getElementById('mockup-fb').style.display='flex';">
-      <div id="mockup-fb" class="mockup-placeholder">
-        <span class="mock-title">Mapa do Posicionamento de Valor</span>
-        <span class="mock-sub">Charles Veiyga</span>
+    <div class="curso-card">
+      <div class="curso-card-header">
+        <span class="curso-card-badge">Curso Online</span>
+        <h3>Mapa do Posicionamento de Valor</h3>
+        <p class="curso-card-autor">Charles Veiyga</p>
+      </div>
+      <div class="curso-card-pillars">
+        <span>Consciência do Posicionamento</span>
+        <span>Diagnóstico da Imagem Atual</span>
+        <span>Posicionamento por Contexto</span>
+        <span>Vestimenta Estratégica</span>
+        <span>Cabelo e Barba</span>
+        <span>Cabelo e Maquiagem</span>
+        <span>Postura de Sucesso</span>
+        <span>Comunicação Verbal</span>
+        <span>Gesticulação e Presença</span>
+      </div>
+      <div class="curso-card-footer">
+        <div class="curso-card-info"><span class="curso-info-num">9</span><span class="curso-info-lbl">Aulas</span></div>
+        <div class="curso-card-divider"></div>
+        <div class="curso-card-info"><span class="curso-info-num">R$27</span><span class="curso-info-lbl">Acesso Imediato</span></div>
+        <div class="curso-card-divider"></div>
+        <div class="curso-card-info"><span class="curso-info-num">7d</span><span class="curso-info-lbl">Garantia</span></div>
       </div>
     </div>
   </div>
@@ -929,11 +1032,13 @@ footer p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.8; }
   <div class="container">
     <div class="livro-inner">
       <div class="livro-img">
-        <img src="IMG_LIVRO.jpg" alt="O Poder Está em Você - Charles Veiyga"
-             onerror="this.onerror=null;this.style.display='none';document.getElementById('livro-fb').style.display='flex';">
-        <div id="livro-fb" class="livro-placeholder">
-          <span class="livro-mock-title">O Poder<br>Está em Você</span>
-          <span class="livro-mock-sub">Charles Veiyga</span>
+        <div class="livro-cover-css">
+          <span class="livro-ornament">✦</span>
+          <span class="livro-cover-autor">Charles Veiyga</span>
+          <div class="livro-cover-line"></div>
+          <h3 class="livro-cover-titulo">O Poder<br>Está em<br>Você</h3>
+          <div class="livro-cover-line"></div>
+          <span class="livro-cover-sub">Autoconhecimento e Imagem de Alto Valor</span>
         </div>
       </div>
       <div class="livro-text">
