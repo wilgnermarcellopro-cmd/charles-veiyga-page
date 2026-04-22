@@ -221,15 +221,19 @@ body { font-family: 'Inter', sans-serif; background: var(--black-deep); color: v
 }
 .autoridade-inner {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 56px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
   align-items: center;
+}
+.autoridade-img {
+  position: relative;
 }
 .autoridade-img img {
   width: 100%;
   border-radius: 4px;
   object-fit: cover;
-  aspect-ratio: 3/4;
+  display: block;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,162,74,0.2);
 }
 .autoridade-img .img-fallback {
   width: 100%;
@@ -243,6 +247,28 @@ body { font-family: 'Inter', sans-serif; background: var(--black-deep); color: v
   text-align: center;
   padding: 20px;
   border-radius: 4px;
+}
+.autoridade-badge {
+  position: absolute;
+  bottom: 24px;
+  right: -20px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  color: var(--black-deep);
+  font-family: 'Playfair Display', serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 18px 22px;
+  line-height: 1.5;
+  max-width: 190px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  border-radius: 2px;
+}
+.autoridade-badge strong {
+  display: block;
+  font-size: 1.05rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 2px;
 }
 .autoridade-text .tag {
   display: inline-block;
@@ -864,7 +890,8 @@ footer p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.8; }
 
   /* Autoridade */
   .autoridade-inner { grid-template-columns: 1fr; gap: 28px; }
-  .autoridade-img { max-width: 260px; margin: 0 auto; }
+  .autoridade-img { max-width: 320px; margin: 0 auto; }
+  .autoridade-badge { right: -8px; bottom: 16px; font-size: 0.72rem; padding: 14px 16px; max-width: 160px; }
 
   /* Mockup curso */
   .curso-card-pillars { grid-template-columns: repeat(2, 1fr); }
@@ -967,6 +994,9 @@ footer p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.8; }
         <img src="IMG_SINUCA.jpg" alt="Charles Veiyga"
              onerror="this.onerror=null;this.style.display='none';document.getElementById('about-fb').style.display='flex';">
         <div id="about-fb" class="img-fallback" style="display:none;">Foto do Charles<br>(blazer, mesa de sinuca)</div>
+        <div class="autoridade-badge">
+          <strong>Transforme</strong>como o mundo enxerga o seu valor.
+        </div>
       </div>
       <div class="autoridade-text">
         <span class="tag">A Metáfora que Muda Tudo</span>
