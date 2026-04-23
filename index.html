@@ -534,7 +534,27 @@ body { font-family: 'Inter', sans-serif; background: var(--black-deep); color: v
   color: var(--text-muted);
   line-height: 1.9;
   margin-bottom: 14px;
-}@media (max-width: 768px) {
+}
+.contracapa-wrap { margin: 20px 0; border: 1px solid rgba(201,162,74,0.25); border-radius: 4px; overflow: hidden; }
+.contracapa-btn {
+  width: 100%; background: rgba(201,162,74,0.06); border: none;
+  color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.88rem;
+  font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  padding: 14px 20px; cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; transition: background 0.2s;
+}
+.contracapa-btn:hover { background: rgba(201,162,74,0.12); }
+.contracapa-btn svg { transition: transform 0.3s; flex-shrink: 0; color: var(--gold); }
+.contracapa-btn.open svg { transform: rotate(180deg); }
+.contracapa-body {
+  max-height: 0; overflow: hidden; transition: max-height 0.45s ease, padding 0.3s;
+  padding: 0 20px; background: rgba(201,162,74,0.03);
+}
+.contracapa-body.open { max-height: 600px; padding: 20px; }
+.contracapa-body p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 12px; }
+.contracapa-body p:last-child { margin-bottom: 0; }
+.contracapa-encerramento { border-top: 1px solid rgba(201,162,74,0.15); padding-top: 12px; margin-top: 4px; color: var(--text-light) !important; }
+@media (max-width: 768px) {
   .livro-inner { grid-template-columns: 1fr; gap: 32px; }
   .livro-img { max-width: 220px; margin: 0 auto; }
 }
@@ -1322,6 +1342,20 @@ footer p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.8; }
         <p>
           Quem entra no Mapa do Posicionamento de Valor carrega não só o método prático, mas a filosofia de um mentor que já guiou centenas de pessoas a descobrirem o poder que sempre esteve dentro delas — e aprenderam a mostrar isso ao mundo.
         </p>
+        <div class="contracapa-wrap">
+          <button class="contracapa-btn" id="contracapa-toggle">
+            <span>Ler contracapa</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="contracapa-body" id="contracapa-body">
+            <p><em>Você tem a vida dos sonhos e realizações que sempre quis ter?</em></p>
+            <p>Se a resposta for não, então <strong>este livro é para você!</strong></p>
+            <p>Se você está em busca do autoconhecimento verdadeiro que te ajude a entender sobre o poder que existe dentro de você, que te capacita a ser quem quiser, a ter o que quiser, descobrir sobre o domínio e o controle sobre a sua vida, aprender como usar esse poder, então <strong>este livro é para você!</strong></p>
+            <p>Se quer aprender os segredos de como as pessoas conquistaram riquezas e saíram do anonimato, seguindo uma jornada de crescimento e conquistando resultados além da sua imaginação, então <strong>este livro é para você.</strong></p>
+            <p>Aqui vou te mostrar o poder que existe dentro de você e como poderá usá-lo.</p>
+            <p class="contracapa-encerramento">Saiba que a primeira parte do seu poder está na sua tomada de decisão.<br>Tome sua decisão. Compre este livro.<br><strong>Estou esperando por você.</strong></p>
+          </div>
+        </div>
         <a href="#" class="cta-btn" target="_blank" rel="noopener" style="margin-top:8px;">QUERO O LIVRO</a>
       </div>
     </div>
@@ -1349,6 +1383,17 @@ footer p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.8; }
 </footer>
 
 <script>
+// Contracapa
+var ctBtn = document.getElementById('contracapa-toggle');
+var ctBody = document.getElementById('contracapa-body');
+if (ctBtn && ctBody) {
+  ctBtn.addEventListener('click', function() {
+    ctBtn.classList.toggle('open');
+    ctBody.classList.toggle('open');
+    ctBtn.querySelector('span').textContent = ctBody.classList.contains('open') ? 'Fechar contracapa' : 'Ler contracapa';
+  });
+}
+
 // FAQ
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
